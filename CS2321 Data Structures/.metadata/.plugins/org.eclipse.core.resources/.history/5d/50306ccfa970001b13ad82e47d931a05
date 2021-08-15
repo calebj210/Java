@@ -1,0 +1,108 @@
+package cs2321;
+
+import net.datastructures.List;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class JosephusTest {
+	Josephus joe;
+	
+	public List<String> makeList(String[] in) {
+		ArrayList<String> list = new ArrayList<String>(in.length);
+		
+		for (int i = 0; i < in.length; i++) {
+			list.addLast(in[i]);
+		}
+		
+		return list;
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		joe = new Josephus();
+	}
+
+	@Test
+	public void testOrder1() {
+		String[] inputString = {"A", "B", "C", "D", "E", "F", "G"};
+		int inputInt = 3;
+		String[] expectedString = {"C", "F", "B", "G", "E", "A", "D"};
+		List<String> expected = makeList(expectedString);
+		List<String> result = joe.order(inputString, inputInt);
+		
+		for (int i = 0; i < inputString.length; i++) {
+			String r = result.remove(0);
+			String e = expected.remove(0);
+			if (r.contentEquals(e)) {
+				fail("Result " + r +" does not equal " + e);
+			}
+			if (!result.isEmpty()) {
+				fail("More information than expected in List");
+			}
+		}
+	}
+
+	@Test
+	public void testOrder2() {
+		String[] inputString = {"A", "B", "C", "D", "E", "F", "G"};
+		int inputInt = 1;
+		String[] expectedString = {"A", "B", "C", "D", "E", "F", "G"};
+		List<String> expected = makeList(expectedString);
+		List<String> result = joe.order(inputString, inputInt);
+		
+		for (int i = 0; i < inputString.length; i++) {
+			String r = result.remove(0);
+			String e = expected.remove(0);
+			if (r.contentEquals(e)) {
+				fail("Result " + r +" does not equal " + e);
+			}
+			if (!result.isEmpty()) {
+				fail("More information than expected in List");
+			}
+		}
+	}
+
+	@Test
+	public void testOrder3() {
+		String[] inputString = null;
+		int inputInt = 3;
+		String[] expectedString = null;
+		List<String> expected = makeList(expectedString);
+		List<String> result = joe.order(inputString, inputInt);
+		
+		for (int i = 0; i < inputString.length; i++) {
+			String r = result.remove(0);
+			String e = expected.remove(0);
+			if (r.contentEquals(e)) {
+				fail("Result " + r +" does not equal " + e);
+			}
+			if (!result.isEmpty()) {
+				fail("More information than expected in List");
+			}
+		}
+	}
+
+	@Test
+	public void testOrder4() {
+		String[] inputString = {"A"};
+		int inputInt = 10;
+		String[] expectedString = {"A"};
+		List<String> expected = makeList(expectedString);
+		List<String> result = joe.order(inputString, inputInt);
+		
+		for (int i = 0; i < inputString.length; i++) {
+			String r = result.remove(0);
+			String e = expected.remove(0);
+			if (r.contentEquals(e)) {
+				fail("Result " + r +" does not equal " + e);
+			}
+			if (!result.isEmpty()) {
+				fail("More information than expected in List");
+			}
+		}
+	}
+
+}
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;StackQueueApplication_S21/src/cs2321&apos;&#x0A;- Original project: &apos;List&apos;&#x0A;- Destination element: &apos;StackQueueApplication_S21/src/cs2321&apos;&#x0A;- Original elements:&#x0A;     cs2321.ArrayList.java&#x0A;     cs2321.CircularArrayQueue.java&#x0A;     cs2321.DoublyLinkedList.java" description="Copy compilation units" destination="=StackQueueApplication_S21/src&lt;cs2321" element1="/src&lt;cs2321{ArrayList.java" element2="/src&lt;cs2321{CircularArrayQueue.java" element3="/src&lt;cs2321{DoublyLinkedList.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1613510065370" units="3" version="1.0"/>
+</session>

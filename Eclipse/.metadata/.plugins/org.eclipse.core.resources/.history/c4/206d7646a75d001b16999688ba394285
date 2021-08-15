@@ -1,0 +1,59 @@
+import java.security.DrbgParameters.NextBytes;
+
+/**
+ * Remove duplicates in a sorted linked list
+ * 
+ * Date Last Modified: 01/21/2021
+ * @author Caleb Jacobs
+ * 
+ * CS2321
+ * Spring 2021
+ */
+
+public class LinkedListProblems {
+
+	/*
+	Given a sorted (SORTED!!!) linked list, delete all duplicates, keep the first appearance for each element only 
+
+	Example 1:
+	Input: 1->1->2
+	Output: 1->2
+
+	Example 2:
+	Input: 1->1->2->3->3->3
+	Output: 1->2->3
+	 */
+	public static void deleteDuplicates(ListNode head) {
+		ListNode tail = head.next;				// Tail of head node
+		while (tail != null) {
+			if (head.val == tail.val) {
+				head.next = tail.next;			// Remove duplicate node
+			} else {
+				head = head.next;				// Advance head to next node
+			}
+			tail = tail.next;					// Advance tail to next node
+		}
+	}
+	
+	public static void main(String[] args) {
+		//Design the test data. For easy representation, we use array to represent the data
+		int[] testdata= {1,1,1,1,1};
+		
+		
+		//Create a sorted list using the data
+		ListNode head = new ListNode(testdata[0]);
+		ListNode tail = head;
+		for (int i=1; i<testdata.length;i++) {
+			ListNode tmp = new ListNode(testdata[i]);
+			tail.next=tmp;
+			tail = tmp;
+		}
+		
+		ListNode node = head;
+		while (node != null) {
+			System.out.print(node.val + " -> ");
+			node = node.next;
+		}
+		System.out.println(node.val);
+	}
+}

@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+/home/cajacobs/Documents/Java/CS2321 Data Structures/.metadata/.plugins/org.eclipse.jdt.core
+2158888393.index
+1592900679.index
+1074644978.index
+1235143557.index
+1601861297.index
+1575941930.index
+1139488591.index
+1931404729.index
+2337932990.index
+128981232.index
+1917530052.index
+2068140394.index
+2895346790.index
+3040970121.index
+3586941523.index
+2103717895.index
+1781257128.index
+543786356.index

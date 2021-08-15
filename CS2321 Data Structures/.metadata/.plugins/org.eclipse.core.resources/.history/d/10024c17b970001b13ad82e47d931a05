@@ -1,0 +1,102 @@
+package cs2321;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PostfixExpressionTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testEvaluate1() {
+		String input = "1 2 +";
+		int expected = 3;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate2() {
+		String input = "13 4 *";
+		int expected = 52;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate3() {
+		String input = "10 2 /";
+		int expected = 5;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate4() {
+		String input = "1 2 -";
+		int expected = -1;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate5() {
+		String input = " 4 20 5 + * 6 -";
+		int expected = 94;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate6() {
+		String input = "";
+		int expected = 0;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate7() {
+		String input = "188 4 20 5 + * 6 - /";
+		int expected = 2;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+	
+	@Test
+	public void testEvaluate8() {
+		String input = "24 2 3 4 5 + - * /";
+		int expected = -2;
+		int result = PostfixExpression.evaluate(input);
+		
+		if (expected != result) {
+			fail("Expected " + expected + " but got " + result);
+		}
+	}
+
+}

@@ -1,0 +1,41 @@
+package cs2321;
+
+import net.datastructures.Stack;
+
+public class DLLStack<E> implements Stack<E> {
+	DoublyLinkedList<E> stack; 
+	
+	public DLLStack() {
+		stack = new DoublyLinkedList<E>();
+	}
+	
+	@Override
+	public int size() {
+		return stack.size();
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return stack.isEmpty();
+	}
+
+	@Override
+	public void push(E e) {
+		stack.addLast(e);
+	}
+
+	@Override
+	public E top() {
+		return stack.last().getElement();
+	}
+
+	@Override
+	public E pop() {
+		if (!stack.isEmpty()) {
+			return stack.removeLast();
+		} else {
+			return null;
+		}
+	}
+
+}
